@@ -30,7 +30,13 @@ The widget will be added in your navigation or on any html element that you deci
 
 Simply deactivate and delete the plugin.
 
+== 3rd party ==
+This plugin use the script file provided by https://feedback.farm. It's use to load the widget script.
+Privacy policy: https://www.feedback.farm/privacy-policy
+Terms of service: https://www.feedback.farm/terms-of-service
+
 == Changelog ==
 = 1.0 =
 
 - Plugin released.
+
