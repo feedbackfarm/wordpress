@@ -90,9 +90,9 @@ function feedback_farm_selected_menu_field() {
     echo "<select name=\"feedback_farm_selected_menu\" id=\"feedback_farm_selected_menu\">";
     echo "<option value=\"\">Manual</option>";
     foreach ($menus as $menu) {
-        echo "<option value=\"$menu->slug\"" .
-            selected($selected_menu, $menu->slug, false) .
-            ">$menu->name</option>";
+        echo "<option value=\"".esc_attr($menu->slug)."\"" .
+            selected(esc_attr($selected_menu), esc_attr($menu->slug), false) .
+            ">".esc_html($menu->name)."</option>";
     }
 
     echo "</select>";
@@ -101,7 +101,7 @@ function feedback_farm_selected_menu_field() {
 
 function feedback_farm_projectId() {
     echo '<input name="feedback_farm_projectId" id="feedback_farm_projectId" type="text" value="' .
-        get_option('feedback_farm_projectId') .
+        esc_attr(get_option('feedback_farm_projectId')) .
         '" />';
     echo '<p class="description">You can get your project Id from <a href=\"https://feedback.farm/app/projects\" target=\"_blank\">your project page</a>.</p>';
 }
@@ -111,7 +111,7 @@ function add_feedback_farm_nav_menu_item($items, $args) {
     $projectId = get_option('feedback_farm_projectId');
 
     if(!empty($selected_menu) && $args->menu->slug === $selected_menu) {
-        $items .= "<li class=\"menu-item\"><a href=\"#\" id=\"feedback-farm\" data-feedback-farm-projectid=\"$projectId\">Give feedback</a></li>";
+        $items .= "<li class=\"menu-item\"><a href=\"#\" id=\"feedback-farm\" data-feedback-farm-projectid=\"".esc_attr($projectId)."\">Give feedback</a></li>";
     }
     return $items;
 }
