@@ -57,7 +57,7 @@ function feedback_farm_settings_page_sections() {
     add_settings_section(
         'feedback_farm',
         'General',
-        'callback',
+        'feedback_farm_setting_callback',
         'feedback_farm'
     );
 }
@@ -117,5 +117,5 @@ function add_feedback_farm_nav_menu_item($items, $args) {
 }
 add_filter('wp_nav_menu_items', 'add_feedback_farm_nav_menu_item', 10, 2);
 
-function callback() {}
+function feedback_farm_setting_callback() {}
 ?>
